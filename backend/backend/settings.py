@@ -29,9 +29,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-0llqom8w%ja17a$u7jmw96ya46xrq7ujqxqn)@d5dmew1e8^^b'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('DEBUG', 'True') == 'True'
 #allow any different host to host django application
-ALLOWED_HOSTS = ["*"] 
+ALLOWED_HOSTS = ["*"]
+
+# Configure for Choreo
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.choreo.dev",
+    "http://localhost:8000",
+    "http://localhost:3000",
+]
 
 # need for JWT Tokens to work properly
 REST_FRAMEWORK = {
