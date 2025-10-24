@@ -1,8 +1,16 @@
 version: 0.1
 
 endpoints:
-  - name: "REST API"
+  - name: "Django Backend"
     port: 8000
     type: REST
     networkVisibility: Public
     context: /
+    docker:
+      context: ../
+      dockerfile: Dockerfile
+    env:
+      - name: DEBUG
+        value: "False"
+      - name: DJANGO_SETTINGS_MODULE
+        value: "backend.settings"
