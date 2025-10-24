@@ -1,0 +1,12 @@
+----- BACK END (DJANGO) -----
+* When significantly changing the data model -> run migrations 
+    - python3 manage.py makemigrations
+    - python3 manage.py migrate
+
+* Running application
+    - python3 manage.py runserver
+
+----- FRONT END(REACT) -----
+*installation packages
+    -npm create vite@latest frontend -- --template react
+    -npm install axios react-router-dom jwt-decode
