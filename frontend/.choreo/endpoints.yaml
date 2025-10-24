@@ -1,0 +1,9 @@
+version: 0.1
+
+# Endpoints configurations
+endpoints:
+  - name: "Frontend"
+    port: 80
+    type: "Web"
+    networkVisibility: "Public"
+    context: "/"
